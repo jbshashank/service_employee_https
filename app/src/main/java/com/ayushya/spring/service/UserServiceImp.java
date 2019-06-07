@@ -15,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.ayushya.spring.bean.Brands;
+import com.ayushya.spring.bean.BusinessClient;
 import com.ayushya.spring.bean.Cities;
 import com.ayushya.spring.bean.Employee;
 import com.ayushya.spring.bean.Models;
@@ -22,6 +23,7 @@ import com.ayushya.spring.bean.Product_category;
 import com.ayushya.spring.bean.Product_subCategory;
 import com.ayushya.spring.bean.States;
 import com.ayushya.spring.repository.BrandsRepository;
+import com.ayushya.spring.repository.BusinessClientRepository;
 import com.ayushya.spring.repository.CityRepository;
 import com.ayushya.spring.repository.ModelsRepository;
 import com.ayushya.spring.repository.Product_categoryRepository;
@@ -54,6 +56,9 @@ public class UserServiceImp implements UserService
 
   @Autowired
   Product_subCategoryRepository product_subcategoryRepository;
+
+  @Autowired
+  BusinessClientRepository businessClientRepository;
 
   @Autowired
   MongoTemplate mongoTemplate;
@@ -232,5 +237,40 @@ public class UserServiceImp implements UserService
     System.out.println("Brand" + brand_id + "product" + product_id + "product sub category" + productSubCat_id);
     return (List<Models>) modelsRepository.findModels(brand_id, product_id, productSubCat_id);
     // return null;
+  }
+
+  public void createClient(BusinessClient client)
+  {
+    // TODO Auto-generated method stub
+    businessClientRepository.save(client);
+  }
+
+  @Override
+  public List<BusinessClient> getClient()
+  {
+    // TODO Auto-generated method stub
+    return (List<BusinessClient>) businessClientRepository.findAll();
+  }
+
+  @Override
+  public BusinessClient findClientById(String id)
+  {
+    // TODO Auto-generated method stub
+    return businessClientRepository.findOne(id);
+  }
+
+  @Override
+  public BusinessClient updateclient(BusinessClient client,
+                                     String l)
+  {
+    // TODO Auto-generated method stub
+    return businessClientRepository.save(client);
+  }
+
+  @Override
+  public void deleteClientById(String id)
+  {
+    // TODO Auto-generated method stub
+    businessClientRepository.delete(id);
   }
 }

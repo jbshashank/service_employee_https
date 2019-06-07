@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.ayushya.spring.bean.Brands;
+import com.ayushya.spring.bean.BusinessClient;
 import com.ayushya.spring.bean.Cities;
 import com.ayushya.spring.bean.Employee;
 import com.ayushya.spring.bean.Models;
@@ -61,6 +62,17 @@ public interface UserService
                                 int product_id,
                                 int productSubCat_id);
 
-  List<Product_subCategory> getProductSubCategory(int brand_id,
-                                                  int product_id);
+  public List<Product_subCategory> getProductSubCategory(int brand_id,
+                                                         int product_id);
+
+  public void createClient(BusinessClient client);
+
+  public List<BusinessClient> getClient();
+
+  public BusinessClient findClientById(String id);
+
+  public BusinessClient updateclient(BusinessClient client,
+                                     String l);
+
+  public void deleteClientById(String id);
 }
