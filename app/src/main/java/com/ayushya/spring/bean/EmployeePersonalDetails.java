@@ -10,6 +10,9 @@ public class EmployeePersonalDetails {
 	private String empFirstName;
 	private String empMiddleName;
 	private String empLastName;
+	private String empPhoneNumber;
+	private String empEmailAddress;
+	private String empFirebaseToken;
 
 	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
 	private Date DOB;
@@ -35,10 +38,15 @@ public class EmployeePersonalDetails {
 
 	}
 
-	public EmployeePersonalDetails(String empFirstName, String empMiddleName, String empLastName, Date DOB, String POB, String aboutMe, Date DOJ, String gender, String expertiesLevel, String role, String salary, String location, String skills, String address, String age, String city, String state, String pincode, String uploadDir) {
+	public EmployeePersonalDetails(String empFirstName, String empMiddleName, String empLastName,
+			String empPhoneNumber,String empEmailAddress, String empFirebaseToken,
+			Date DOB, String POB, String aboutMe, Date DOJ, String gender, String expertiesLevel, String role, String salary, String location, String skills, String address, String age, String city, String state, String pincode, String uploadDir) {
 		this.empFirstName = empFirstName;
 		this.empMiddleName = empMiddleName;
 		this.empLastName = empLastName;
+		this.empPhoneNumber = empPhoneNumber;
+		this.empEmailAddress = empEmailAddress;
+		this.empFirebaseToken = empFirebaseToken;
 		this.DOB = DOB;
 		this.POB = POB;
 		this.aboutMe = aboutMe;
@@ -75,6 +83,30 @@ public class EmployeePersonalDetails {
 	public void setEmpLastName(String empLastName) {
 		this.empLastName = empLastName;
 	}
+	public String getEmpPhoneNumber() {
+		return empPhoneNumber;
+	}
+
+	public void setEmpPhoneNumber(String empPhoneNumber) {
+		this.empPhoneNumber = empPhoneNumber;
+	}
+
+	public String getEmpEmailAddress() {
+		return empEmailAddress;
+	}
+
+	public void setEmpEmailAddress(String empEmailAddress) {
+		this.empEmailAddress = empEmailAddress;
+	}
+
+	public String getEmpFirebaseToken() {
+		return empFirebaseToken;
+	}
+
+	public void setEmpFirebaseToken(String empFirebaseToken) {
+		this.empFirebaseToken = empFirebaseToken;
+	}
+
 	public Date getDOB() {
 		return DOB;
 	}
